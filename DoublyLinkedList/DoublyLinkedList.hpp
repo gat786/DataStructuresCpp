@@ -24,6 +24,8 @@ public:
     void addToEnd(int value);
 
     void addToPosition(int value);
+
+    void removeFromPosition(int position);
 };
 
 
