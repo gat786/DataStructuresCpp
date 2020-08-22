@@ -33,11 +33,10 @@ int SinglyLinkedList::listLength() {
 }
 
 void SinglyLinkedList::addToStart(int value) {
-    SinglyLinkedList::SLLNode *node =
-            new SinglyLinkedList::SLLNode(_start->value);
-    _start->value = value;
-    node->next = _start->next;
-    _start->next = node;
+    SinglyLinkedList::SLLNode* node =
+            new SinglyLinkedList::SLLNode(value);
+    node->next = _start;
+    _start = node;
 }
 
 void SinglyLinkedList::addToEnd(int value) {
