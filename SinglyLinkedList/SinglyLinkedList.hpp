@@ -28,6 +28,8 @@ public:
     void addAtPosition(int value, int position);
 
     void printList();
+
+    void removeFromPosition(int position);
 };
 
 #endif //DATASTRUCTURESCPP_SINGLYLINKEDLIST_HPP
