@@ -97,5 +97,5 @@ void SinglyLinkedList::removeFromPosition(int position) {
 
     SLLNode* next = current->next;
     current->next = next->next;
-    free(next);
+    delete next;
 }

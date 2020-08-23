@@ -8,13 +8,13 @@
 
 class DoublyLinkedList {
     struct DLLNode{
-        int value;
+        int value{};
         struct DLLNode* prev;
         struct DLLNode* next;
         DLLNode() { prev = nullptr; next = nullptr;}
-        explicit DLLNode(int value) { value = value; prev = nullptr; next = nullptr; }
+        explicit DLLNode(int value) : value(value), prev(nullptr),next(nullptr){}
     };
-    DLLNode* start;
+    DLLNode* _start;
 
 public:
     explicit DoublyLinkedList(int value);
@@ -23,9 +23,11 @@ public:
 
     void addToEnd(int value);
 
-    void addToPosition(int value);
+    void addToPosition(int value,int position);
 
     void removeFromPosition(int position);
+
+    void printDLL();
 };
 
 
