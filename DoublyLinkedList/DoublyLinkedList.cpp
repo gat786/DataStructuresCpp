@@ -27,24 +27,29 @@ void DoublyLinkedList::addToEnd(int value) {
 
 void DoublyLinkedList::addToPosition(int value, int position) {
     if (position == 0)
-        throw std::runtime_error("Use SinglyLinkedList::addToStart");
+        throw std::runtime_error("Use DoublyLinkedList::addToStart");
 
     auto* node = new DoublyLinkedList::DLLNode(value);
     DoublyLinkedList::DLLNode* current = _start;
 
     int i = 0;
     while (i < position) {
-        if (current->next == nullptr)
-            throw std::runtime_error(&"The length of list is "[i]);
-        current = current->next;
-        ++i;
+        if (current->next == nullptr) {
+            std::cout << "Lists length is less than specified position";
+            current = nullptr;
+            break;
+        }else {
+            current = current->next;
+            ++i;
+        }
     }
-    DLLNode* prev = current->prev;
-    current->prev = node;
-    prev->next = node;
-    node->prev = prev;
-    node->next = current;
-
+    if (current!= nullptr) {
+        DLLNode *prev = current->prev;
+        current->prev = node;
+        prev->next = node;
+        node->prev = prev;
+        node->next = current;
+    }
 
 }
 
