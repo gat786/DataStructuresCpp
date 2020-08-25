@@ -58,8 +58,11 @@ void DoublyLinkedList::removeFromPosition(int position) {
 
     int i = 0;
     while (i < position) {
-        if (current->next == nullptr)
-            throw std::runtime_error(&"The length of list is "[i]);
+        if (current->next == nullptr) {
+            std::cout << "last index of list is " << i
+                << " cant remove element at " << position << "\n";
+            return;
+        }
         current = current->next;
         ++i;
     }

@@ -8,9 +8,9 @@ int main() {
     ll->addToEnd(3);
     ll->addToEnd(4);
     ll->addtoStart(0);
-    ll->addToPosition(786,8);
+    ll->addToPosition(786,3);
     ll->printDLL();
-    ll->removeFromPosition(5);
+    ll->removeFromPosition(6);
     ll->printDLL();
     return 0;
 }
