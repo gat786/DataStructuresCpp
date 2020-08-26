@@ -1,16 +1,21 @@
 #include <iostream>
-#include "DoublyLinkedList/DoublyLinkedList.hpp"
+#include "CircularLinkedList/CircularLinkedList.hpp"
 
 int main() {
+    auto* circularLinkedList = new CircularLinkedList(1);
+    circularLinkedList->addToEnd(2);
+    circularLinkedList->addToEnd(3);
+    circularLinkedList->addToEnd(4);
+    circularLinkedList->addToStart(0);
+    circularLinkedList->printList();
 
-    auto* ll = new DoublyLinkedList(1);
-    ll->addToEnd(2);
-    ll->addToEnd(3);
-    ll->addToEnd(4);
-    ll->addtoStart(0);
-    ll->addToPosition(786,3);
-    ll->printDLL();
-    ll->removeFromPosition(6);
-    ll->printDLL();
+    std::cout << "Length of list is " <<
+        circularLinkedList->listLength() << std::endl;
+
+    circularLinkedList->removeFromPosition(2);
+    circularLinkedList->printList();
+    circularLinkedList->removeFromPosition(786);
+    circularLinkedList->addAtPosition(786,2);
+    circularLinkedList->printList();
     return 0;
 }
