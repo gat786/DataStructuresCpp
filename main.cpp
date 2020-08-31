@@ -3,10 +3,10 @@
 
 int main() {
     auto* circularLinkedList = new CircularLinkedList(1);
+    circularLinkedList->addToStart(0);
     circularLinkedList->addToEnd(2);
     circularLinkedList->addToEnd(3);
     circularLinkedList->addToEnd(4);
-    circularLinkedList->addToStart(0);
     circularLinkedList->printList();
 
     std::cout << "Length of list is " <<

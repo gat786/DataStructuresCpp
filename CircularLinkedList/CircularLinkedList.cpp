@@ -7,7 +7,6 @@
 
 CircularLinkedList::CircularLinkedList(int value) {
     _start = new CircularLinkedList::CLLNode(value);
-    printList();
 }
 
 int CircularLinkedList::listLength() {
@@ -26,12 +25,20 @@ int CircularLinkedList::listLength() {
 void CircularLinkedList::printList() {
     auto* _current = _start;
 
-    while(_current && _current !=_start){
-        std::cout << _current;
+    if (_current->next == nullptr) {
+        std::cout << _current->value << "*";
+        return;
+    }
+
+    std::cout << _current->value;
+    _current = _current->next;
+
+    while(_current!=_start){
+        std::cout  << "->" << _current->value;
         _current = _current->next;
     }
+    std::cout  << "*" << std::endl;
 }
-
 void CircularLinkedList::addToStart(int value) {
     auto* node = new CircularLinkedList::CLLNode(value);
     auto* endNode = CircularLinkedList::getLastNode();
@@ -44,7 +51,6 @@ void CircularLinkedList::addToEnd(int value) {
     auto* node = new CircularLinkedList::CLLNode(value);
     auto* endNode = CircularLinkedList::getLastNode();
     node->next = _start;
-    printList();
     endNode->next = node;
 }
 
@@ -55,24 +61,12 @@ void CircularLinkedList::addAtPosition(int value, int position) {
     }
     auto* node = new CircularLinkedList::CLLNode(value);
     auto* _currentNode = _start;
-    int curr_position = 1;
+    int curr_position = 0;
+    if(_currentNode->next!= nullptr){
 
-    while(true){
-        _currentNode = _currentNode->next;
-
-        if (curr_position == position - 1)
-            break;
-        else if (_currentNode == _start) {
-            std::cout << "Position is out of range of this list" << std::endl;
-            std::cout << "Last position available is " << position << std::endl;
-            return;
-        }
-
-        ++curr_position;
+    }else{
+        std::cout << "Length of list is " << curr_position << std::endl;
     }
-
-    node->next = _currentNode;
-    _currentNode->next = node;
 }
 
 void CircularLinkedList::removeFromPosition(int position) {
@@ -84,18 +78,18 @@ void CircularLinkedList::removeFromPosition(int position) {
         return;
     }
     auto* _currentNode = _start;
-    int curr_position = 1;
+    int curr_position = 0;
 
     while(true){
+        ++curr_position;
         _currentNode = _currentNode->next;
         if (curr_position == position - 1)
             break;
         else if (_currentNode == _start) {
             std::cout << "Position is out of range of this list" << std::endl;
-            std::cout << "Last position available is " << position << std::endl;
+            std::cout << "Length of CLL is " << curr_position << std::endl;
             return;
         }
-        ++curr_position;
     }
     auto* nodeToRemove = _currentNode->next;
     _currentNode->next = nodeToRemove->next;
@@ -107,10 +101,11 @@ CircularLinkedList::CLLNode *CircularLinkedList::getLastNode() {
 
     // if this is true we have only one element and we haven't formed a
     // circle yet
-    if(_current->next!= nullptr) {
-        do {
+    if(_current->next != nullptr) {
+        _current = _current->next;
+        while(_current->next!= _start)
             _current = _current->next;
-        } while (_current != _start);
+
     }
     return _current;
 }
