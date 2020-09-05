@@ -11,7 +11,7 @@ class CircularLinkedList {
         int value{};
         struct CLLNode* next;
         CLLNode() { next = this; }
-        explicit CLLNode(int value) : value(value), next(nullptr) {}
+        explicit CLLNode(int value) : value(value), next(this) {}
     };
     CLLNode* _start;
 

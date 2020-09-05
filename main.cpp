@@ -15,7 +15,7 @@ int main() {
     circularLinkedList->removeFromPosition(2);
     circularLinkedList->printList();
     circularLinkedList->removeFromPosition(786);
-    circularLinkedList->addAtPosition(786,2);
+    circularLinkedList->addAtPosition(786,6);
     circularLinkedList->printList();
     return 0;
 }

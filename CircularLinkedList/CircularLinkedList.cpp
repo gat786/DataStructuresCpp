@@ -55,17 +55,30 @@ void CircularLinkedList::addToEnd(int value) {
 }
 
 void CircularLinkedList::addAtPosition(int value, int position) {
-    if(position == 0){
-        CircularLinkedList::addToStart(value);
-        return;
-    }
     auto* node = new CircularLinkedList::CLLNode(value);
     auto* _currentNode = _start;
     int curr_position = 0;
-    if(_currentNode->next!= nullptr){
 
-    }else{
-        std::cout << "Length of list is " << curr_position << std::endl;
+    if (position == 0) {
+        addToStart(value);
+        return;
+    }
+
+    while(curr_position < position){
+
+        if(curr_position == position - 1){
+            // set  node->next == _Current->next and then set node
+            // as the _current->next
+            node->next = _currentNode->next;
+            _currentNode->next = node;
+            return;
+        }else if(_currentNode->next==_start){
+            // we reached the end and weren't able to find the position
+            std::cout << "out of index" << std::endl;
+            return;
+        }
+        _currentNode = _currentNode->next;
+        ++curr_position;
     }
 }
 
@@ -86,7 +99,7 @@ void CircularLinkedList::removeFromPosition(int position) {
         if (curr_position == position - 1)
             break;
         else if (_currentNode == _start) {
-            std::cout << "Position is out of range of this list" << std::endl;
+            std::cout << position << " is out of range of this list" << std::endl;
             std::cout << "Length of CLL is " << curr_position << std::endl;
             return;
         }
