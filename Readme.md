@@ -10,6 +10,6 @@ free to leave a PR. I will surely check and add it if fits right ;-)
 
 The links for every implemented Data Structure is defined as below
 
-1. [Singly Linked Lists](CLionProjects/DataStructuresCpp/LinkedList/SinglyLinkedList)  
-2. [Doubly Linked Lists](CLionProjects/DataStructuresCpp/LinkedList/DoublyLinkedList)
-3. [Circular Linked Lists](CLionProjects/DataStructuresCpp/LinkedList/CircularLinkedList)
+1. [Singly Linked Lists](LinkedList/SinglyLinkedList)  
+2. [Doubly Linked Lists](LinkedList/DoublyLinkedList)
+3. [Circular Linked Lists](LinkedList/CircularLinkedList)

@@ -14,6 +14,10 @@ int main() {
     stackArray.pushItem(4,stack);
     stackArray.pushItem(5,stack);
     stackArray.pushItem(6,stack);
+    stackArray.pushItem(3,stack);
+    stackArray.pushItem(4,stack);
+    stackArray.pushItem(5,stack);
+    stackArray.pushItem(6,stack);
     stackArray.printStack(stack);
     return 0;
 }
