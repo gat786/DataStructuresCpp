@@ -3,4 +3,4 @@ project(DataStructuresCPP)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(DataStructuresCPP main.cpp SinglyLinkedList/SinglyLinkedList.cpp SinglyLinkedList/SinglyLinkedList.hpp DoublyLinkedList/DoublyLinkedList.cpp DoublyLinkedList/DoublyLinkedList.hpp CircularLinkedList/CircularLinkedList.cpp CircularLinkedList/CircularLinkedList.hpp)
+add_executable(DataStructuresCPP main.cpp LinkedList/SinglyLinkedList/SinglyLinkedList.cpp LinkedList/SinglyLinkedList/SinglyLinkedList.hpp LinkedList/DoublyLinkedList/DoublyLinkedList.cpp LinkedList/DoublyLinkedList/DoublyLinkedList.hpp LinkedList/CircularLinkedList/CircularLinkedList.cpp LinkedList/CircularLinkedList/CircularLinkedList.hpp Stack/StackArray/StackArray.cpp Stack/StackArray/StackArray.hpp)

@@ -1,21 +1,19 @@
 #include <iostream>
-#include "CircularLinkedList/CircularLinkedList.hpp"
+#include "Stack/StackArray/StackArray.hpp"
 
 int main() {
-    auto* circularLinkedList = new CircularLinkedList(1);
-    circularLinkedList->addToStart(0);
-    circularLinkedList->addToEnd(2);
-    circularLinkedList->addToEnd(3);
-    circularLinkedList->addToEnd(4);
-    circularLinkedList->printList();
-
-    std::cout << "Length of list is " <<
-        circularLinkedList->listLength() << std::endl;
-
-    circularLinkedList->removeFromPosition(2);
-    circularLinkedList->printList();
-    circularLinkedList->removeFromPosition(786);
-    circularLinkedList->addAtPosition(786,6);
-    circularLinkedList->printList();
+    StackArray stackArray;
+    auto* stack = stackArray.CreateStack();
+    std::cout << stackArray.isStackEmpty(stack) << std::endl;
+    stackArray.pushItem(1,stack);
+    stackArray.pushItem(2,stack);
+    stackArray.printStack(stack);
+    std::cout << stackArray.popItem(stack) << std::endl;
+    stackArray.printStack(stack);
+    stackArray.pushItem(3,stack);
+    stackArray.pushItem(4,stack);
+    stackArray.pushItem(5,stack);
+    stackArray.pushItem(6,stack);
+    stackArray.printStack(stack);
     return 0;
 }
