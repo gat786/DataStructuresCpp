@@ -12,4 +12,6 @@ The links for every implemented Data Structure is defined as below
 
 #### [LinkedLists](LinkedList/)
 
-#### Stacks - 
+#### [Stacks](Stacks/)
+
+#### [Queues](Queues/)
