@@ -66,9 +66,9 @@ int StackArray::popItem(Stack *stack) {
 void StackArray::deleteStack(Stack *stack) {
     if (stack){
         if(stack->array){
-            free(stack->array);
+            delete[] stack->array;
         }
-        free(stack);
+        delete stack;
     }
 }
 

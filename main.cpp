@@ -19,4 +19,5 @@ int main() {
     stackArray.pushItem(5,stack);
     stackArray.pushItem(6,stack);
     stackArray.printStack(stack);
+    stackArray.deleteStack(stack);
 }
