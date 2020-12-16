@@ -10,8 +10,6 @@ free to leave a PR. I will surely check and add it if fits right ;-)
 
 The links for every implemented Data Structure is defined as below
 
-#### [LinkedLists](LinkedList/)
-
-#### [Stacks](Stacks/)
-
-#### [Queues](Queues/)
+1. [LinkedLists](LinkedList) 
+2. [Stacks](Stack)
+3. [Queues](Queue)

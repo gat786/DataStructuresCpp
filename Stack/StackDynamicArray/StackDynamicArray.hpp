@@ -8,7 +8,7 @@
 
 class StackDynamicArray {
     struct Stack {
-        Stack(int item){
+        explicit Stack(int item){
             top = 1;
             capacity = 1;
             array = new int[capacity]{};

@@ -73,10 +73,8 @@ int StackDynamicArray::popItem(Stack *stack) {
 
 void StackDynamicArray::deleteStack(Stack *stack) {
     if (stack){
-        if(stack->array){
-            free(stack->array);
-        }
-        free(stack);
+        delete[] stack->array;
+        delete stack;
     }
 }
 
