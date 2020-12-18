@@ -9,30 +9,32 @@ class QueueSimpleCircularArray{
     struct Queue{
         int front,rear;
         int capacity;
-        int* queue;
+        int* array;
 
         Queue(){
             front = rear = -1;
             capacity = 1;
-            queue = new int[capacity]{};
+            array = new int[capacity]{};
         }
 
         explicit Queue(int size){
             front = rear = -1;
             capacity = size;
-            queue = new int[capacity];
+            array = new int[capacity];
         }
     };
 
 public:
 
     struct QueueSimpleCircularArray::Queue* CreateQueue();
+    struct QueueSimpleCircularArray::Queue* CreateQueue(int size);
     bool isQueueEmpty(struct Queue* queue);
     bool isQueueFull(struct Queue* queue);
     int sizeOfQueue(struct Queue* queue);
     void enqueueItem(struct Queue* queue,int data);
-    void dequeueItem(struct Queue* queue);
+    int dequeueItem(struct Queue* queue);
     void deleteQueue(struct Queue* queue);
+    void printQueue(struct Queue* queue);
 };
 
 #endif //DATASTRUCTURESCPP_QUEUESIMPLECIRCULARARRAY_HPP
