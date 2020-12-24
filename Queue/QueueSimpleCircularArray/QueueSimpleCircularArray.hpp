@@ -6,6 +6,8 @@
 #define DATASTRUCTURESCPP_QUEUESIMPLECIRCULARARRAY_HPP
 
 class QueueSimpleCircularArray{
+
+public:
     struct Queue{
         int front,rear;
         int capacity;
@@ -24,14 +26,12 @@ class QueueSimpleCircularArray{
         }
     };
 
-public:
-
     struct QueueSimpleCircularArray::Queue* CreateQueue();
     struct QueueSimpleCircularArray::Queue* CreateQueue(int size);
     bool isQueueEmpty(struct Queue* queue);
     bool isQueueFull(struct Queue* queue);
     int sizeOfQueue(struct Queue* queue);
-    void enqueueItem(struct Queue* queue,int data);
+    virtual void enqueueItem(struct Queue* queue,int data);
     int dequeueItem(struct Queue* queue);
     void deleteQueue(struct Queue* queue);
     void printQueue(struct Queue* queue);
