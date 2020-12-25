@@ -8,6 +8,7 @@
 #pragma once
 class SinglyLinkedList
 {
+public:
     struct SLLNode {
         int value{};
         struct SLLNode* next;
@@ -16,7 +17,6 @@ class SinglyLinkedList
     };
     SLLNode* _start;
 
-public:
     explicit SinglyLinkedList(int value);
 
     int listLength();
