@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Queue/QueueSimpleCircularArray/QueueSimpleCircularArray.hpp"
+#include "Queue/QueueDynamicCircularArray/QueueDynamicCircularArray.hpp"
 
 int main() {
 
