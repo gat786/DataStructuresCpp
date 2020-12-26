@@ -32,7 +32,7 @@ void QueueLinkedList::EnqueueItem(QueueLinkedList::Queue *queue, int data) {
 
 int QueueLinkedList::DequeueItem(QueueLinkedList::Queue *queue) {
     int data = 0;
-    SinglyLinkedList::SLLNode* temp{};
+    SinglyLinkedList::SLLNode* temp;
 
     if (IsQueueEmpty(queue)){
         std::cout << "Queue is currently empty" << std::endl;
@@ -41,8 +41,8 @@ int QueueLinkedList::DequeueItem(QueueLinkedList::Queue *queue) {
         temp = queue->front;
         data = queue->front->value;
         queue->front = queue->front->next;
-        delete temp;
     }
+
     return data;
 }
 
@@ -54,4 +54,13 @@ void QueueLinkedList::DeleteQueue(QueueLinkedList::Queue *queue) {
         delete temp;
     }
     delete queue;
+}
+
+void QueueLinkedList::PrintQueue(QueueLinkedList::Queue *queue) {
+    auto temp = queue->front;
+    while (temp != nullptr) {
+        std::cout << temp->value << " | ";
+        temp = temp->next;
+    }
+    std::cout << std::endl;
 }
