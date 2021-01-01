@@ -25,3 +25,8 @@ role:
 a collection of items in O(logn) (average).
 * Priority Queue (PQ), which supports search and deletion of minimum (or 
 maximum) on a collection of items in logarithmic time (in worst case).
+
+The example tree structure that we will be working with in this example is 
+going to be this 
+
+![tree diagram visualization](./resources/tree-diagram.png)
