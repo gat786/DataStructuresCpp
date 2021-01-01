@@ -1,15 +1,25 @@
 #include <iostream>
-#include "Queue/QueueLinkedList/QueueLinkedList.hpp"
+#include "Trees/BinaryTree/BinaryTree.hpp"
 
 int main() {
-    auto queueLinkedList = new QueueLinkedList();
-    auto queue = queueLinkedList->CreateQueue();
-    queueLinkedList->EnqueueItem(queue,1);
-    queueLinkedList->EnqueueItem(queue,2);
-    queueLinkedList->EnqueueItem(queue,3);
-    queueLinkedList->PrintQueue(queue);
-    std::cout << "Dequeued item " << queueLinkedList->DequeueItem(queue) << std::endl;
-    queueLinkedList->PrintQueue(queue);
-    queueLinkedList->DeleteQueue(queue);
-    delete queueLinkedList;
+    BinaryTree tree{};
+    auto binaryTree = tree.CreateBinaryTree(1);
+    auto nodeLeft = new BinaryTree::BinaryTreeNode(2);
+    auto nodeRight = new BinaryTree::BinaryTreeNode(3);
+    auto nodeLeftLeft = new BinaryTree::BinaryTreeNode(4);
+    auto nodeLeftRight = new BinaryTree::BinaryTreeNode(5);
+    auto nodeRightLeft = new BinaryTree::BinaryTreeNode(6);
+    auto nodeRightRight = new BinaryTree::BinaryTreeNode(7);
+    binaryTree->attachLeft(nodeLeft);
+    binaryTree->attachRight(nodeRight);
+    binaryTree->left->attachLeft(nodeLeftLeft);
+    binaryTree->left->attachRight(nodeLeftRight);
+    binaryTree->right->attachLeft(nodeRightLeft);
+    binaryTree->right->attachRight(nodeRightRight);
+    tree.PreOrderTraversalRecursive(binaryTree);
+    std::cout << std::endl;
+    tree.PostOrderTraversalRecursive(binaryTree);
+    std::cout << std::endl;
+    tree.InOrderTraversalRecursive(binaryTree);
+    std::cout << std::endl;
 }
