@@ -31,6 +31,7 @@ public:
     void PreOrderTraversalRecursive(struct BinaryTreeNode *root);
     void PostOrderTraversalRecursive(struct BinaryTreeNode *root);
     void InOrderTraversalRecursive(struct BinaryTreeNode *root);
+    void LevelOrderTraversal(struct BinaryTreeNode *root);
 };
 
 #endif //DATASTRUCTURESCPP_BINARYTREE_HPP
