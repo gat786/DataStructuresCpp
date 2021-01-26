@@ -10,7 +10,7 @@
  *  running.
  *
     auto queueDynamicCircularArray = new QueueDynamicCircularArray{};
-    auto queue = queueDynamicCircularArray->CreateQueue();
+    auto queue = queueDynamicCircularArray->createQueue();
     queueDynamicCircularArray->enqueueItem(queue,1);
     queueDynamicCircularArray->enqueueItem(queue,2);
     queueDynamicCircularArray->enqueueItem(queue,3);

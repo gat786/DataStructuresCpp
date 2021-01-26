@@ -8,7 +8,7 @@
 /*
  *
     auto queueLinkedList = new QueueLinkedList();
-    auto queue = queueLinkedList->CreateQueue();
+    auto queue = queueLinkedList->createQueue();
     queueLinkedList->EnqueueItem(queue,1);
     queueLinkedList->EnqueueItem(queue,2);
     queueLinkedList->EnqueueItem(queue,3);

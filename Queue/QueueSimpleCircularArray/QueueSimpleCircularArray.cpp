@@ -7,7 +7,7 @@
 
 /*
  * QueueSimpleCircularArray queueCircularArray{};
-    auto queue = queueCircularArray.CreateQueue();
+    auto queue = queueCircularArray.createQueue();
     queueCircularArray.enqueueItem(queue,1);
     queueCircularArray.enqueueItem(queue,2);
     queueCircularArray.enqueueItem(queue,3);
