@@ -28,9 +28,16 @@ public:
     };
 
     struct BinaryTreeNode *CreateBinaryTree(int valueOfRoot);
+
     void PreOrderTraversalRecursive(struct BinaryTreeNode *root);
+    void PreOrderTraversalNonRecursive(struct BinaryTreeNode *root);
+
     void PostOrderTraversalRecursive(struct BinaryTreeNode *root);
+    void PostOrderTraversalNonRecursive(struct BinaryTreeNode *root);
+
     void InOrderTraversalRecursive(struct BinaryTreeNode *root);
+    void InOrderTraversalNonRecursive(struct BinaryTreeNode *root);
+
     void LevelOrderTraversal(struct BinaryTreeNode *root);
 };
 
