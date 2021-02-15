@@ -18,7 +18,7 @@ int main() {
     binaryTree->right->attachRight(nodeRightRight);
     tree.PreOrderTraversalNonRecursive(binaryTree);
     std::cout << std::endl;
-    tree.PostOrderTraversalRecursive(binaryTree);
+    tree.PostOrderTraversalNonRecursive(binaryTree);
     std::cout << std::endl;
     tree.InOrderTraversalRecursive(binaryTree);
     std::cout << std::endl;

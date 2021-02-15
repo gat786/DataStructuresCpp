@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <stack>
+#include <queue>
 #include "BinaryTree.hpp"
 #include "../../Queue/QueueSimpleCircularArray/QueueSimpleCircularArray.hpp"
 
@@ -97,7 +98,25 @@ void BinaryTree::PostOrderTraversalNonRecursive(struct BinaryTreeNode *root) {
         is current’s right child, we are traversing up the tree from the right.
         In this case, we print current’s value and pop it off the stack.
      */
-
+    std::stack<BinaryTreeNode*> stack{};
+    BinaryTreeNode* previous = nullptr;
+    do {
+        while (root!=nullptr){
+            stack.push(root);
+            root = root->left;
+        }
+        while (root == nullptr && !stack.empty()){
+            root = stack.top();
+            if (root->right == nullptr  || root->right == previous){
+                std::cout << root->data << "\t";
+                stack.pop();
+                previous = root;
+                root = nullptr;
+            } else {
+                root = root->right;
+            }
+        }
+    } while (!stack.empty());
 
 }
 
@@ -136,9 +155,20 @@ void BinaryTree::InOrderTraversalNonRecursive(struct BinaryTreeNode *root) {
  */
 void BinaryTree::LevelOrderTraversal(struct BinaryTreeNode *root) {
     struct BinaryTreeNode* temp;
-    QueueSimpleCircularArray circularQueue{};
-    auto queue = circularQueue.CreateQueue();
+    std::queue<BinaryTreeNode*> queue{};
+
     if (!root)
         return;
-    //circularQueue.enqueueItem(queue,root);
+
+    queue.push(root);
+
+    while (queue.empty()){
+        temp = queue.front();
+        queue.pop();
+        std::cout << temp->data << "\t";
+        if (temp->left)
+            queue.push(temp->left);
+        if (temp->right)
+            queue.push(temp->right);
+    }
 }
