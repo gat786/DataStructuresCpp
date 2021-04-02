@@ -39,6 +39,8 @@ public:
     void InOrderTraversalNonRecursive(struct BinaryTreeNode *root);
 
     void LevelOrderTraversal(struct BinaryTreeNode *root);
+
+    void DeleteTree(struct BinaryTreeNode *root);
 };
 
 #endif //DATASTRUCTURESCPP_BINARYTREE_HPP

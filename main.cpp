@@ -20,6 +20,7 @@ int main() {
     std::cout << std::endl;
     tree.PostOrderTraversalNonRecursive(binaryTree);
     std::cout << std::endl;
-    tree.InOrderTraversalRecursive(binaryTree);
+    tree.InOrderTraversalNonRecursive(binaryTree);
     std::cout << std::endl;
+    tree.DeleteTree(binaryTree);
 }

@@ -172,3 +172,12 @@ void BinaryTree::LevelOrderTraversal(struct BinaryTreeNode *root) {
             queue.push(temp->right);
     }
 }
+
+void BinaryTree::DeleteTree(struct BinaryTreeNode *root) {
+    if(root == nullptr) {
+        return;
+    }
+    DeleteTree(root->left);
+    DeleteTree(root->right);
+    delete root;
+}
