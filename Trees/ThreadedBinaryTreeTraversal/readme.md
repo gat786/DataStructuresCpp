@@ -51,5 +51,14 @@ both NULL pointers or only in one of them.
    predecessor information and NULL right pointer will contain PostOrder
    successor information.
    
+For writing code to handle such a data-structure the code should know the
+difference between a regular left/right pointer and a thread. To do this,
+we use two additional fields in each node, giving us, for threaded trees,
+nodes of the following structure.
 
+![Threaded Binary Tree representation](../resources/threaded-binary-tree-structure.png)
+
+Difference of a threaded and non threaded binary tree
+
+![Difference between threaded and non-threaded binary tree](../resources/difference-threaded-non-threaded-binary.png)
 
