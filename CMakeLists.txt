@@ -21,4 +21,4 @@ add_executable(DataStructuresCPP main.cpp
         Queue/QueueLinkedList/QueueLinkedList.cpp
         Queue/QueueLinkedList/QueueLinkedList.hpp
         Trees/BinaryTree/BinaryTree.cpp
-        Trees/BinaryTree/BinaryTree.hpp)
+        Trees/BinaryTree/BinaryTree.hpp Trees/ThreadedBinaryTreeTraversal/ThreadedBinaryTree.cpp Trees/ThreadedBinaryTreeTraversal/ThreadedBinaryTree.hpp)
