@@ -31,11 +31,21 @@
     std::cout << std::endl;
  */
 
+/**
+ * Creates a BinaryTreeNode for the input value
+ * @param valueOfRoot - input value for the node
+ * @returns BinaryTreeNode - a BinaryTreeNode created from the value
+ * */
 struct BinaryTree::BinaryTreeNode * BinaryTree::CreateBinaryTree(int valueOfRoot) {
     auto rootNode = new BinaryTreeNode(valueOfRoot);
     return rootNode;
 }
 
+/**
+ * Prints Preorder Traversal of the tree which starts at root recursively
+ * @param *root - pointer to the root BinaryTreeNode
+ * @returns void
+ */ 
 void BinaryTree::PreOrderTraversalRecursive(struct BinaryTreeNode *root) {
     if (root){
         std::cout << root->data << "\t";
@@ -44,6 +54,11 @@ void BinaryTree::PreOrderTraversalRecursive(struct BinaryTreeNode *root) {
     }
 }
 
+/**
+ * Prints Preorder Traversal of the tree which starts at root nonrecursively
+ * @param *root - pointer to the root BinaryTreeNode
+ * @returns void
+ */ 
 void BinaryTree::PreOrderTraversalNonRecursive(struct BinaryTreeNode *root) {
     // Time Complexity: O(n). Space Complexity: O(n).
     std::stack<BinaryTreeNode*> stack;
@@ -63,6 +78,11 @@ void BinaryTree::PreOrderTraversalNonRecursive(struct BinaryTreeNode *root) {
     }
 }
 
+/**
+ * Prints PostOrder Traversal of the tree which starts at root recursively
+ * @param *root - pointer to the root BinaryTreeNode
+ * @returns void
+ */ 
 void BinaryTree::PostOrderTraversalRecursive(struct BinaryTreeNode *root) {
     if (root){
         PostOrderTraversalRecursive(root->left);
@@ -71,6 +91,11 @@ void BinaryTree::PostOrderTraversalRecursive(struct BinaryTreeNode *root) {
     }
 }
 
+/**
+ * Prints PostOrder Traversal of the tree which starts at root nonrecursively
+ * @param *root - pointer to the root BinaryTreeNode
+ * @returns void
+ */ 
 void BinaryTree::PostOrderTraversalNonRecursive(struct BinaryTreeNode *root) {
     /*
      * In preorder and inorder traversals, after popping the stack element we
@@ -120,6 +145,11 @@ void BinaryTree::PostOrderTraversalNonRecursive(struct BinaryTreeNode *root) {
 
 }
 
+/**
+ * Prints InOrder Traversal of the tree which starts at root recursively
+ * @param *root - pointer to the root BinaryTreeNode
+ * @returns void
+ */ 
 void BinaryTree::InOrderTraversalRecursive(struct BinaryTreeNode *root) {
     if (root){
         InOrderTraversalRecursive(root->left);
@@ -153,6 +183,12 @@ void BinaryTree::InOrderTraversalNonRecursive(struct BinaryTreeNode *root) {
         Repeat this until all levels are completed.
 
  */
+
+/**
+ * Prints LevelOrder Traversal of the tree which starts at root
+ * @param *root - pointer to the root BinaryTreeNode
+ * @returns void
+ */ 
 void BinaryTree::LevelOrderTraversal(struct BinaryTreeNode *root) {
     struct BinaryTreeNode* temp;
     std::queue<BinaryTreeNode*> queue{};
@@ -173,6 +209,12 @@ void BinaryTree::LevelOrderTraversal(struct BinaryTreeNode *root) {
     }
 }
 
+/**
+ * Deletes the memory that has been allocated for the entire tree starting 
+ * from *root
+ * @param *root - pointer to the root BinaryTreeNode
+ * @returns void
+ */ 
 void BinaryTree::DeleteTree(struct BinaryTreeNode *root) {
     if(root == nullptr) {
         return;
