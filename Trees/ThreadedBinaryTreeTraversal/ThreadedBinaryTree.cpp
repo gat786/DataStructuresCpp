@@ -3,3 +3,7 @@
 //
 
 #include "ThreadedBinaryTree.hpp"
+
+ThreadedBinaryTree::ThreadedBinaryTreeNode* ThreadedBinaryTree::CreateThreadedBinaryTree(int valueOfRoot){
+    
+}

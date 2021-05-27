@@ -52,7 +52,7 @@ public:
     };
 
     struct BinaryTreeNode *CreateBinaryTree(int valueOfRoot);
-    void InsertNode(BinaryTreeNode* node, BinaryTreeNode* root);
+    void InsertNode(int data, BinaryTreeNode* root);
 
     void PreOrderTraversalRecursive(struct BinaryTreeNode *root);
     void PreOrderTraversalNonRecursive(struct BinaryTreeNode *root);

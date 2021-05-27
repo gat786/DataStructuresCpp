@@ -42,6 +42,42 @@ struct BinaryTree::BinaryTreeNode * BinaryTree::CreateBinaryTree(int valueOfRoot
 }
 
 /**
+ * Inserts a node in the BinaryTree structure
+ * @param *node - Pointer to the node that is to be added to the tree
+ * @param *root - Pointer to the root node of the tree
+ * @returns void
+ */
+void BinaryTree::InsertNode(int data, BinaryTreeNode* root){
+    BinaryTreeNode* temporary;
+    std::queue<BinaryTreeNode*> storage_queue{};
+    auto nodeToBeAdded = new BinaryTree::BinaryTreeNode(data);
+
+    storage_queue.push(root);
+    
+    while (!storage_queue.empty())
+    {
+        temporary = storage_queue.front();
+        storage_queue.pop();
+
+        if(temporary->left == nullptr){
+            temporary->attachLeft(nodeToBeAdded);
+            break;
+        }
+        else 
+            storage_queue.push(temporary->left);
+
+        if(temporary->right == nullptr){
+            temporary->attachRight(nodeToBeAdded);
+            break;
+        }
+        else 
+            storage_queue.push(temporary->right);
+            
+    }
+    
+}
+
+/**
  * Prints Preorder Traversal of the tree which starts at root recursively
  * @param *root - pointer to the root BinaryTreeNode
  * @returns void
@@ -158,6 +194,11 @@ void BinaryTree::InOrderTraversalRecursive(struct BinaryTreeNode *root) {
     }
 }
 
+/**
+ * Prints InOrder Traversal of the tree which starts at root nonrecursively
+ * @param *root - pointer to the root BinaryTreeNode
+ * @returns void
+ */ 
 void BinaryTree::InOrderTraversalNonRecursive(struct BinaryTreeNode *root) {
     // Time Complexity: O(n). Space Complexity: O(n).
     std::stack<BinaryTreeNode*> stack;
