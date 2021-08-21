@@ -13,22 +13,42 @@
 class ThreadedBinaryTree{
 public:
     struct ThreadedBinaryTreeNode{
-        struct ThreadedBinaryTree* left;
-        struct ThreadedBinaryTree* right;
+        struct ThreadedBinaryTreeNode* left;
+        struct ThreadedBinaryTreeNode* right;
         int data;
         // lTag - predecessor
         // rTag - sucessor
         bool lTag, rTag;
 
+        ThreadedBinaryTreeNode(){
+            // data = value;
+            lTag = 0;
+            rTag = 1;
+
+            left = this;
+            right = this;
+        }
+
         ThreadedBinaryTreeNode(int value){
             data = value;
             lTag = 0;
             rTag = 1;
-            rTag = this;
+            
+            left = this;
+            right = this;
         }
     };
 
-    struct ThreadedBinaryTreeNode* CreateThreadedBinaryTree(int valueOfRoot);
+    ThreadedBinaryTreeNode* root;
+
+    static bool directionLeft, directionRight;
+	
+
+    void CreateThreadedBinaryTree();
+    void insertValue(int value);
+    ThreadedBinaryTreeNode* getInorderSuccessor(ThreadedBinaryTreeNode* currentNode);
+    void emptyTree();
+    void printTree();
 
 };
 
